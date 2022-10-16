@@ -15,9 +15,12 @@ use App\Http\Controllers\CouponController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\GithubController;
+use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\SslCommerzPaymentController;
 use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\RoleManager;
+
 
 
 /*
@@ -162,3 +165,12 @@ Route::get('/edit/permission/{role_id}', [RoleManager::class, 'edit_permission']
 Route::post('/role/permission/upadate', [RoleManager::class, 'role_permission_upadate'])->name('role.permission.upadate');
 Route::get('/role/assign', [RoleManager::class, 'role_assign'])->name('role.assign');
 Route::post('/role/assign/user', [RoleManager::class, 'role_assign_user'])->name('role.assign.user');
+
+//github login
+Route::get('/github/redirect', [GithubController::class, 'github_redirect'])->name('github.redirect'); 
+Route::get('/github/callback', [GithubController::class, 'github_callback'])->name('github.callback');
+
+
+//google login
+Route::get('/google/redirect', [GoogleController::class, 'google_redirect'])->name('google.redirect'); 
+Route::get('/google/callback', [GoogleController::class, 'google_callback'])->name('google.callback');

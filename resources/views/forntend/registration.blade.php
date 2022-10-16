@@ -54,6 +54,20 @@
                         <div class="form-group">
                             <button type="submit" class="btn btn-md full-width bg-dark text-light fs-md ft-medium">Create An Account</button>
                         </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <a href="{{ route('github.redirect') }}" class="btn btn-md bg-dark full-width text-light ">Sign Up With <i class="fab fa-github"></i></a>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <a href="{{ route('google.redirect') }}" class="btn btn-md bg-dark full-width text-light ">Sign Up With <i class="fab fa-google"></i></a>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <a href="{{ route('github.redirect') }}" class="btn btn-md bg-dark full-width text-light ">Sign Up With <i class="fab fa-facebook"></i></a>
+                                </div>
+                                <div class="clr"></div>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
