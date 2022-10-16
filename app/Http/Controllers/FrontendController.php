@@ -14,6 +14,8 @@ use App\Models\Size;
 use App\Models\Cart;
 use App\Models\OrderProduct;
 use Auth;
+use Cookie;
+use Arr;
 
 class FrontendController extends Controller
 {
@@ -26,7 +28,6 @@ class FrontendController extends Controller
         $categories = Category::all();
         $products = Product::where('status',1)->get();
         $product_images = ProductImage::all();
-        
         return view('forntend.index',[
             'categories' => $categories,
             'products' => $products,
@@ -47,10 +48,30 @@ class FrontendController extends Controller
             ->selectRaw('size_id, count(*) as total')
             ->groupBy('size_id')
             ->get();;
+
+        //cockies
+        $all_cokies = Cookie::get('recent_viewed_product');
+        if(!$all_cokies){
+            $all_cokies = "[]";
+        }
+        $cookies = json_decode($all_cokies,true);
+        $cookie_product = Arr::prepend($cookies,$product->id);
+        $cookie_products = json_encode($cookie_product);
+        Cookie::queue('recent_viewed_product', $cookie_products, 100000);
+
         $inventories = Inventory::where('product_id',$product->id)->get();
         $reviews = OrderProduct::where('product_id',$product->id)->whereNotNull('review')->get();
         $total_review = $reviews->count();
         $total_star = $reviews->where('star')->sum('star');
+        $recent_viewd_products = Cookie::get('recent_viewed_product');
+        if($recent_viewd_products == ''){
+            $unique_viewed_product = array_unique(json_decode("[]",true));
+        }
+        else{
+            $unique_viewed_product = array_unique(json_decode($recent_viewd_products,true));
+        }
+        
+        $recent_viewd_product = Product::find($unique_viewed_product);
         return view('forntend.product_details',[
             'product' => $product,
             'product_images' => $product_images,
@@ -60,6 +81,7 @@ class FrontendController extends Controller
             'reviews' => $reviews,
             'total_review' => $total_review,
             'total_star' => $total_star,
+            'recent_viewd_product' => $recent_viewd_product,
         ]);
     }
 
