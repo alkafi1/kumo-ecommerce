@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use App\Models\User;
 
 class RoleManager extends Controller
 {
@@ -42,5 +43,21 @@ class RoleManager extends Controller
         $role = Role::find($request->role_id);
         $role->syncPermissions($request->permission);
         return back()->with('success','Role Created!!!');
+    }
+
+    function role_assign(){
+        $users = User::all();
+        $all_users_with_all_their_roles =  User::with("roles")->whereHas("roles")->get();
+        $roles = Role::all();
+        return view('admin.role.role_assign',[
+            'users' => $users,
+            'all_users_with_all_their_roles' => $all_users_with_all_their_roles,
+            'roles' => $roles,
+        ]);
+    }
+    function role_assign_user(Request $request){
+        $user = User::find($request->user_id);
+        $user->assignRole($request->role_id);
+        return back()->with('succes', 'Successfully Role assign To User');
     }
 }

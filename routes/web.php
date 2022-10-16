@@ -160,3 +160,5 @@ Route::post('/permission/store', [RoleManager::class, 'permission_store'])->name
 Route::post('/create/role', [RoleManager::class, 'create_role'])->name('create.role');
 Route::get('/edit/permission/{role_id}', [RoleManager::class, 'edit_permission'])->name('edit.permission');
 Route::post('/role/permission/upadate', [RoleManager::class, 'role_permission_upadate'])->name('role.permission.upadate');
+Route::get('/role/assign', [RoleManager::class, 'role_assign'])->name('role.assign');
+Route::post('/role/assign/user', [RoleManager::class, 'role_assign_user'])->name('role.assign.user');

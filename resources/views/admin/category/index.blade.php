@@ -27,9 +27,15 @@
                         <td>{{ $category->rel_to_user->name }}</td>
                         <td>{{ $category->created_at->diffForhumans() }}</td>
                         <td>
+                            @can('delete_category')
+                                
+                            
                             <a href="{{ route('category.delete', $category->id) }}" class="btn btn-dark">
                                 <i class="lni lni-trash"></i>
                             </a>
+                            @else
+                            You are not Admin
+                            @endcan
                         </td>
                     </tr>
                     @endforeach

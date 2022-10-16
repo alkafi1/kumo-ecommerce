@@ -137,16 +137,27 @@
 					</ul>
 				</li>
 				<li>
-					<a href="{{ route('role.manager') }}" class="has-arrow">
+					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class='bx bxl-product-hunt' ></i>
 						</div>
 						<div class="menu-title">Role</div>
 					</a>
-					{{--  <ul>
-						<li> <a href="{{ route('coupon') }}"><i class='bx bx-receipt'></i>Copuon List</a>
+					<ul>
+						<li> <a href="{{ route('role.assign') }}" >
+							<div class="parent-icon"><i class='bx bxl-product-hunt' ></i>
+							</div>
+							<div class="menu-title">Assign Role</div>
+						</a>
 						</li>
-					</ul>  --}}
+						<li> <a href="{{ route('role.manager') }}">
+								<div class="parent-icon"><i class='bx bxl-product-hunt' ></i>
+								</div>
+								<div class="menu-title">Role And Permission</div>
+							</a>
+						</li>
+					</ul>
 				</li>
+				
 				
 
 			</ul>
