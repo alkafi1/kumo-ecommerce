@@ -20,8 +20,7 @@ use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\SslCommerzPaymentController;
 use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\RoleManager;
-
-
+use App\Http\Controllers\ShopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -174,3 +173,7 @@ Route::get('/github/callback', [GithubController::class, 'github_callback'])->na
 //google login
 Route::get('/google/redirect', [GoogleController::class, 'google_redirect'])->name('google.redirect'); 
 Route::get('/google/callback', [GoogleController::class, 'google_callback'])->name('google.callback');
+
+//shop with filtering
+Route::get('/shop', [ShopController::class, 'shop'])->name('shop'); 
+

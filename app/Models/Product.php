@@ -22,4 +22,12 @@ class Product extends Model
     {
         return $this->belongsTo(Brand::class, 'brand_id');
     }
+    function rel_to_color ()
+    {
+        return $this->belongsTo(Color::class, 'color_id');
+    }
+    function inventories ()
+    {
+        return $this->hasMany(Inventory::class, 'product_id');
+    }
 }

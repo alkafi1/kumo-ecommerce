@@ -113,9 +113,9 @@
 									<div class="headd-sty-02 ml-3">
 										<form class="bg-white rounded-md border-bold">
 											<div class="input-group">
-												<input type="text" class="form-control custom-height b-0" placeholder="Search for products..." />
+												<input type="text" id="search_input" class="form-control custom-height b-0" placeholder="Search for products..." />
 												<div class="input-group-append">
-													<div class="input-group-text"><button class="btn bg-white text-danger custom-height rounded px-3" type="button"><i class="fas fa-search"></i></button></div>
+													<div class="input-group-text"><button id="search_btn" class="btn bg-white text-danger custom-height rounded px-3" type="button"><i class="fas fa-search"></i></button></div>
 												</div>
 											</div>
 										</form>
@@ -182,7 +182,7 @@
 							<div class="nav-menus-wrapper">
 								<ul class="nav-menu">
 									<li><a href="{{ route('home') }}" class="pl-0">Home</a></li>
-									<li><a href="#">Shop</a></li>
+									<li><a href="{{ route('shop') }}">Shop</a></li>
 									<li><a href="{{ route('about.us') }}">About Us</a></li>
 									<li><a href="#">Contact</a></li>
 								</ul>
@@ -566,7 +566,19 @@
 			function closeSearch() {
 				document.getElementById("Search").style.display = "none";
 			}
-		</script>		
+		</script>	
+		<script>
+			$('#search_btn').click(function(){
+				var search_input = $('#search_input').val();
+				var min = $('#min').val();
+				var max = $('#max').val();
+				var category_id = $('input[class="category_id"]:checked').val();
+				var color_id = $('input[name="color_id"]:checked').val();
+				var size_id = $('input[name="size_id"]:checked').val();
+				var link = "{{ route('shop') }}?"+"q="+search_input+"&min="+min+"&max="+max+"&category_id="+category_id+"&color_id="+color_id+"&size_id="+size_id;
+				window.location.href = link;
+			});
+		</script>	
 
 	</body>
 

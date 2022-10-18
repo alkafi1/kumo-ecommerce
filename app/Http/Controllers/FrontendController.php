@@ -90,17 +90,6 @@ class FrontendController extends Controller
         return view('forntend.about_us');
     }
 
-
-
-
-
-
-
-
-
-
-
-
     function dashboard()
     {
         $total_user = User::count();
