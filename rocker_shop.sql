@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 15, 2022 at 02:01 PM
+-- Generation Time: Oct 18, 2022 at 06:55 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.1.6
 
@@ -106,7 +106,8 @@ CREATE TABLE `carts` (
 
 INSERT INTO `carts` (`id`, `customer_id`, `product_id`, `color_id`, `size_id`, `quantity`, `price`, `created_at`, `updated_at`) VALUES
 (1, 5, 7, 2, 2, 2, 700, '2022-09-26 21:45:40', NULL),
-(2, 12, 5, 1, 1, 2, 253648, '2022-10-14 14:02:48', NULL);
+(2, 12, 5, 1, 1, 2, 253648, '2022-10-14 14:02:48', NULL),
+(3, 16, 4, 2, 1, 2, 240298, '2022-10-16 21:30:45', NULL);
 
 -- --------------------------------------------------------
 
@@ -203,7 +204,8 @@ INSERT INTO `customer_email_verifies` (`id`, `customer_id`, `token`, `created_at
 (6, 9, '6332783cea47f', '2022-09-26 22:12:44', '2022-09-26 22:12:44'),
 (7, 10, '633278c20f461', '2022-09-26 22:14:58', '2022-09-26 22:14:58'),
 (8, 11, '6332790931c4d', '2022-09-26 22:16:09', '2022-09-26 22:16:09'),
-(9, 12, '6349bfd3cd446', '2022-10-14 14:00:19', '2022-10-14 14:00:20');
+(9, 12, '6349bfd3cd446', '2022-10-14 14:00:19', '2022-10-14 14:00:20'),
+(11, 17, '634d75a5418d9', '2022-10-17 09:32:53', '2022-10-17 09:32:53');
 
 -- --------------------------------------------------------
 
@@ -228,7 +230,7 @@ CREATE TABLE `customer_logins` (
 --
 
 INSERT INTO `customer_logins` (`id`, `name`, `email`, `password`, `email_verified_at`, `remember_token`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'Ruapm', 'rupam272@gmail.com', '$2y$10$WqEamvEHtiKm2pSVvaUIOusq8HCibw9tXYur/nIwcCxkV9OoFs/5a', '2022-09-06 15:50:18', NULL, NULL, '2022-09-25 05:50:37', '2022-09-26 22:02:49'),
+(1, 'Ruapm', 'rupam27@gmail.com', '$2y$10$WqEamvEHtiKm2pSVvaUIOusq8HCibw9tXYur/nIwcCxkV9OoFs/5a', '2022-09-06 15:50:18', NULL, NULL, '2022-09-25 05:50:37', '2022-09-26 22:02:49'),
 (2, 'Amir Alston', 'kyzi@mailinator.com', '$2y$10$cyAvPaXVDbTTgduHjE/haew6Tboo84qeQno3nRT.BpIZS.f20Ke/6', NULL, NULL, NULL, '2022-09-25 07:41:55', NULL),
 (3, 'Amir Alston', 'kyzi@mailinator.com', '$2y$10$GKtEzfP9uwLjjOTH2f0ZK.CQXj10CEbGRNFRueuBnjf4Tyxk/6P3i', NULL, NULL, NULL, '2022-09-25 07:42:42', NULL),
 (4, 'Amir Alston', 'kyzi@mailinator.com', '$2y$10$YXpSpOc74mudNDv7pfM.c.SIAkYj5ULNTe3Z0jGNJcf4RZET4WRgy', NULL, NULL, NULL, '2022-09-25 07:43:21', NULL),
@@ -239,7 +241,10 @@ INSERT INTO `customer_logins` (`id`, `name`, `email`, `password`, `email_verifie
 (9, 'Fuller Dale', 'kewyte@mailinator.com', '$2y$10$WFhkdMlx0.I3KsxiGgbrGu0uOO0dXHLeRUQCPUoFeeKxNqs0D8AM2', '2022-09-26 22:14:33', NULL, NULL, '2022-09-26 22:12:44', '2022-09-26 22:14:33'),
 (10, 'Maya Morin', 'tojo@mailinator.com', '$2y$10$T0GozUDxDa5hdHvjJ7dIfuTs.DxtU3.ANOmMAuApWir5y42Am6P1S', NULL, NULL, NULL, '2022-09-26 22:14:58', NULL),
 (11, 'Gisela Mccray', 'faxav@mailinator.com', '$2y$10$KM7kRu9WTDbR2wnw6b0e2uC1Rc55gEsCyHAd6zDZHnoVkwtb.T9TG', NULL, NULL, NULL, '2022-09-26 22:16:09', NULL),
-(12, 'Neil Burch', 'mekitoluvu@mailinator.com', '$2y$10$CP095FoixJ8sqfVeIJjf2eCVlE/H5PS9zS78mipmlQ/4vge7FsaXq', '2022-10-14 14:01:19', NULL, NULL, '2022-10-14 14:00:19', '2022-10-14 14:01:19');
+(12, 'Neil Burch', 'mekitoluvu@mailinator.com', '$2y$10$CP095FoixJ8sqfVeIJjf2eCVlE/H5PS9zS78mipmlQ/4vge7FsaXq', '2022-10-14 14:01:19', NULL, NULL, '2022-10-14 14:00:19', '2022-10-14 14:01:19'),
+(16, 'Al Kafi Rupam', 'rupam272@gmail.com', '$2y$10$uY6fSVO0clE/Z6jDkOsMQ.ljNTlCeW8.SyiNG46jdjFO7oYYdBcIW', NULL, NULL, NULL, '2022-10-16 08:04:24', NULL),
+(17, 'Tanek Guthrie', 'kyriten@mailinator.com', '$2y$10$K4XTbsJPTs9dA/seG4lXCuW3Wx8N1hbMP/WDl7pltdrDi25jdPb.K', NULL, NULL, NULL, '2022-10-17 09:32:33', NULL),
+(18, 'Tanek Guthrie', 'kyriten@mailinator.com', '$2y$10$LZykiDr6UO76nRSJ4ca.auhIXFd3hBQ5d/OWJ3m28.E3LqJ.uP1kS', NULL, NULL, NULL, '2022-10-17 09:32:53', NULL);
 
 -- --------------------------------------------------------
 
@@ -484,6 +489,16 @@ CREATE TABLE `model_has_roles` (
   `model_id` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `model_has_roles`
+--
+
+INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
+(1, 'App\\Models\\User', 4),
+(1, 'App\\Models\\User', 12),
+(2, 'App\\Models\\User', 5),
+(2, 'App\\Models\\User', 6);
+
 -- --------------------------------------------------------
 
 --
@@ -567,10 +582,20 @@ CREATE TABLE `permissions` (
 --
 
 INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
-(1, 'rgtrghtrhg', 'web', '2022-09-25 10:54:20', '2022-09-25 10:54:20'),
 (2, 'create_user', 'web', '2022-09-25 10:59:03', '2022-09-25 10:59:03'),
 (3, 'delete_user', 'web', '2022-09-25 10:59:11', '2022-09-25 10:59:11'),
-(4, 'create_category', 'web', '2022-09-25 10:59:25', '2022-09-25 10:59:25');
+(4, 'create_category', 'web', '2022-09-25 10:59:25', '2022-09-25 10:59:25'),
+(6, 'edit_category', 'web', '2022-10-16 04:33:32', '2022-10-16 04:33:32'),
+(7, 'delete_category', 'web', '2022-10-16 04:33:39', '2022-10-16 04:33:39'),
+(8, 'create_subcategory', 'web', '2022-10-16 04:33:50', '2022-10-16 04:33:50'),
+(9, 'edit_subcategory', 'web', '2022-10-16 04:33:56', '2022-10-16 04:33:56'),
+(10, 'delete_subcategory', 'web', '2022-10-16 04:34:10', '2022-10-16 04:34:10'),
+(11, 'create_brand', 'web', '2022-10-16 04:34:42', '2022-10-16 04:34:42'),
+(12, 'edit_brand', 'web', '2022-10-16 04:34:50', '2022-10-16 04:34:50'),
+(13, 'delete_brand', 'web', '2022-10-16 04:34:54', '2022-10-16 04:34:54'),
+(14, 'create_product', 'web', '2022-10-16 04:35:06', '2022-10-16 04:35:06'),
+(15, 'edit_product', 'web', '2022-10-16 04:35:24', '2022-10-16 04:35:24'),
+(16, 'delete_product', 'web', '2022-10-16 04:35:32', '2022-10-16 04:35:32');
 
 -- --------------------------------------------------------
 
@@ -687,7 +712,8 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'web', '2022-09-25 11:06:43', '2022-09-25 11:06:43');
+(1, 'Admin', 'web', '2022-09-25 11:06:43', '2022-09-25 11:06:43'),
+(2, 'Moderator', 'web', '2022-10-15 07:53:30', '2022-10-15 07:53:30');
 
 -- --------------------------------------------------------
 
@@ -705,8 +731,29 @@ CREATE TABLE `role_has_permissions` (
 --
 
 INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
-(1, 1),
-(3, 1);
+(2, 1),
+(2, 2),
+(3, 1),
+(4, 1),
+(4, 2),
+(6, 1),
+(6, 2),
+(7, 1),
+(8, 1),
+(8, 2),
+(9, 1),
+(9, 2),
+(10, 1),
+(11, 1),
+(11, 2),
+(12, 1),
+(12, 2),
+(13, 1),
+(14, 1),
+(14, 2),
+(15, 1),
+(15, 2),
+(16, 1);
 
 -- --------------------------------------------------------
 
@@ -1557,7 +1604,7 @@ ALTER TABLE `brands`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -1581,13 +1628,13 @@ ALTER TABLE `coupons`
 -- AUTO_INCREMENT for table `customer_email_verifies`
 --
 ALTER TABLE `customer_email_verifies`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `customer_logins`
 --
 ALTER TABLE `customer_logins`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `customer_pass_resets`
@@ -1641,7 +1688,7 @@ ALTER TABLE `order_products`
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -1665,7 +1712,7 @@ ALTER TABLE `product_images`
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `sizes`
